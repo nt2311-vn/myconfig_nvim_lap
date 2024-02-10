@@ -43,9 +43,20 @@ local plugins = {
 local opts = {}
 
 require("lazy").setup(plugins, opts)
+
+-- telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set('n','<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+
+-- neotree
+require("neo-tree").setup({
+    window = {
+          position = "left",
+          width = 25,
+          },
+})
+vim.keymap.set('n', 'C-n', ':Neotree filesystem reveal left<CR>')
 
 
 require("tokyonight").setup({
