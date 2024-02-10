@@ -56,7 +56,7 @@ require("neo-tree").setup({
           width = 25,
           },
 })
-vim.keymap.set('n', 'C-n', ':Neotree filesystem reveal left<CR>', {})
+vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
 
 
 require("tokyonight").setup({
