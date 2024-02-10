@@ -20,12 +20,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-
--- telescope
-local builtin = require("telescope.builtin")
-vim.keymap.set('n','<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-
 -- neotree
 require("neo-tree").setup({
     window = {
@@ -36,18 +30,7 @@ require("neo-tree").setup({
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
 
 
-require("tokyonight").setup({
-  style = "moon",
-  transparent = false,
-  terminal_colors = true,
-  styles = {
-    comments = {italic = true},
-    keywords = {italic = false},
-  },
-  lualine_bold = true,
-})
 
-vim.cmd.colorscheme "tokyonight-moon"
 
 local configs = require("nvim-treesitter.configs")
       configs.setup({
