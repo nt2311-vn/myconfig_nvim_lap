@@ -20,55 +20,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
--- neotree
-require("neo-tree").setup({
-    window = {
-          position = "left",
-          width = 25,
-          },
-})
-vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
+require("lazy").setup("keymappings")
 
 
 
 
-local configs = require("nvim-treesitter.configs")
-      configs.setup({
-          ensure_installed = { 
-            -- low level
-            "c",
-            "cpp",
-
-            -- respective lang
-            "go",
-            "rust",
-            "c_sharp",
-
-            --high level
-            "python",
-            "lua",
-            "javascript",
-            "typescript",
-
-            --web dev
-            "html",
-            "css",
-            "vue",
-            "svelte",
 
 
-            --utility
-            "jq",
-            "dockerfile",
-            "json",
-            "yaml",
-            "gitignore",
-            "jsdoc",
-            "vim",
-            "vimdoc",
-
-          },
-          sync_install = true,
-          highlight = { enable = true },
-          indent = { enable = true },  
-        })
