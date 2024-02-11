@@ -5,7 +5,21 @@ return {
 		local null_ls = require("null-ls")
 		null_ls.setup({
 			sources = {
+				-- code action
+				null_ls.builtins.code_actions.eslint_d,
+
+				-- formatting
 				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.ruff_format,
+				null_ls.builtins.formatting.biome,
+				null_ls.builtins.formatting.gofumpt,
+				null_ls.builtins.formatting.goimports,
+				null_ls.builtins.formatting.golines,
+
+				-- diagnostics
+				null_ls.builtins.diagnostics.ruff,
+				null_ls.builtins.diagnostics.yamllint,
+				null_ls.builtins.diagnostics.eslint_d,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
