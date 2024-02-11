@@ -14,6 +14,8 @@ return {
       "cpp",
       "csharp",
       "java",
+      "html",
+      "css",
     }
     vim.keymap.set("i", "<leader>cs", 'copilot#Accept("<CR>")', {
       noremap = true,
