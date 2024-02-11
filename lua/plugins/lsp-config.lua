@@ -34,6 +34,18 @@ return {
 
 			lspconfig.tsserver.setup({
 				capabilities = capabilities,
+				cmd = { "typescript-language-server", "--stdio" },
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+				},
+				init_options = {
+					hostInfo = "neovim",
+				},
 			})
 
 			lspconfig.pyright.setup({
